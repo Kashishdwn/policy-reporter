@@ -118,7 +118,7 @@ ingress:
   # This ingress exposes the policy-reporter core app.
   enabled: true
   # -- Ingress className
-  className: "nginx"
+  className: ""
   # -- Labels for the Ingress
   labels: {}
   # -- Annotations for the Ingres
