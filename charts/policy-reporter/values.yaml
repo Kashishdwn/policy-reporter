@@ -116,7 +116,7 @@ networkPolicy:
 ingress:
   # -- Create Ingress
   # This ingress exposes the policy-reporter core app.
-  enabled: false
+  enabled: true
   # -- Ingress className
   className: "nginx"
   # -- Labels for the Ingress
