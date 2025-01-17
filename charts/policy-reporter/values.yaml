@@ -118,7 +118,7 @@ ingress:
   # This ingress exposes the policy-reporter core app.
   enabled: true
   # -- Ingress className
-  className: ""
+  className: "nginx"
   # -- Labels for the Ingress
   labels: {}
   # -- Annotations for the Ingres
@@ -127,15 +127,15 @@ ingress:
     kubernetes.io/tls-acme: "true"
   # -- Ingress host list
   hosts:
-   - host: dev-policy-reporter.1es-dev-bootstrap.fico.com
+   - host: chart-example.local
      paths:
       - pathType: Prefix
         path: /
   # -- Ingress tls list
-  tls: []
+  tls: 
   #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+     - hosts:
+       - chart-example.local
 
 logging:
   # -- Enables server access logging
