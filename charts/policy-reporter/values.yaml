@@ -843,12 +843,12 @@ tmpVolume: {}
 
 ui:
   # -- (bool) Enable Policy Reporter UI
-  enabled: false
+  enabled: true
   image:
     # -- (string) Image registry
-    registry: ghcr.io
+    registry: tplm-docker.repo.prod.us-west-2.aws.fico.com
     # -- (string) Image repository
-    repository: kyverno/policy-reporter-ui
+    repository: policy-reporter-ui
     # -- (string) Image PullPolicy
     pullPolicy: IfNotPresent
     # -- (string) Image tag
@@ -973,7 +973,8 @@ ui:
   #     host: http://policy-reporter-kyverno-plugin:8080
 
   # -- Image pull secrets for image verification policies, this will define the `--imagePullSecrets` argument
-  imagePullSecrets: []
+  imagePullSecrets:
+    - name: "my-docker-registry-secret"
     # regcred:
     #   registry: foo.example.com
     #   username: foobar
